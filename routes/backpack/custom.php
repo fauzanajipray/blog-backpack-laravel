@@ -19,4 +19,10 @@ Route::group([
     Route::crud('user', 'UserCrudController');
     Route::crud('category', 'CategoryCrudController');
     Route::crud('post', 'PostCrudController');
+    Route::crud('comment', 'CommentCrudController');
+    Route::get('charts/weekly-users', 'Charts\WeeklyUsersChartController@response')->name('charts.weekly-users.index');
+    Route::get('charts/sample-chart', 'Charts\SampleChartChartController@response')->name('charts.sample-chart.index');
+    Route::get('charts/sample', 'Charts\SampleChartController@response')->name('charts.sample.index');
+    Route::get('charts/visitor', 'Charts\VisitorChartController@response')->name('charts.visitor.index');
+    Route::crud('menu', 'MenuCrudController');
 }); // this should be the absolute last line of this file

@@ -78,8 +78,10 @@ class Post extends Model
         return null;
     }
 
-    // public function getImageAttribute($value)
-    // {
-    //     return $value ? Storage::url($value) : null;
-    // }
+    public function getImageAttribute($value)
+    {
+        $url = Str::replaceFirst('public/','', $value);
+        $value = $url;
+        return $value ? $value : null;
+    }
 }

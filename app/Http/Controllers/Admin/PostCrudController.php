@@ -56,6 +56,7 @@ class PostCrudController extends CrudController
             'type' => 'image',
             'height' => '100px',
             'width' => '100px',
+            'prefix' => 'storage/',
         ]);
         $this->crud->addColumn([
             'label' => 'Author',
@@ -81,6 +82,7 @@ class PostCrudController extends CrudController
      */
     protected function setupCreateOperation()
     {
+        
         CRUD::setValidation([
             'title' => 'required|min:2',
             'slug' => 'required|min:2|regex:/^[a-z0-9]+(?:-[a-z0-9]+)*$/',
@@ -90,7 +92,19 @@ class PostCrudController extends CrudController
         ]);
         
         CRUD::field('title');
-        $this->crud->field('content')->type('ckeditor');
+        $this->crud->addField([   // CKEditor
+            'name'          => 'content',
+            'label'         => 'Content',
+            'type'          => 'ckeditor',
+        
+            // optional:
+            // 'extra_plugins' => ['oembed', 'widget'],
+            'options'       => [
+                'autoGrow_minHeight'   => 200,
+                'autoGrow_bottomSpace' => 50,
+                'removePlugins'        => 'resize,maximize',
+            ]
+        ]);
         $this->crud->addField([
             'name'  => 'slug',
             'target'  => 'title', // will turn the title input into a slug
