@@ -25,4 +25,6 @@ Route::group([
     Route::get('charts/sample', 'Charts\SampleChartController@response')->name('charts.sample.index');
     Route::get('charts/visitor', 'Charts\VisitorChartController@response')->name('charts.visitor.index');
     Route::crud('menu', 'MenuCrudController');
+    Route::crud('permissions', 'PermissionsCrudController');
+    Route::crud('roles', 'RolesCrudController');
 }); // this should be the absolute last line of this file

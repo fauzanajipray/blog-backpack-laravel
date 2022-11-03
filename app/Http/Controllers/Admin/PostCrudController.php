@@ -80,7 +80,7 @@ class PostCrudController extends CrudController
      * @see https://backpackforlaravel.com/docs/crud-operation-create
      * @return void
      */
-    protected function setupCreateOperation()
+    protected function setupCreateOperation(Request $request)
     {
         
         CRUD::setValidation([

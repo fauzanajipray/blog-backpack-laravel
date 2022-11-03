@@ -40,3 +40,5 @@
         <li class="nav-item"><a class="nav-link" href="{{ backpack_url('elfinder') }}"><i class="nav-icon la la-files-o"></i> <span>File manager</span></a></li>
     </ul>
 </li>
+<li class="nav-item"><a class="nav-link" href="{{ backpack_url('permissions') }}"><i class="nav-icon la la-question"></i> Permissions</a></li>
+<li class="nav-item"><a class="nav-link" href="{{ backpack_url('roles') }}"><i class="nav-icon la la-question"></i> Roles</a></li>
